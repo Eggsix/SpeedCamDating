@@ -7,11 +7,6 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
     :recoverable, :rememberable, :trackable, :validatable, :omniauthable
 
-  validates_format_of :email, :without => TEMP_EMAIL_REGEX, on: :update
-  validates_presence_of :first_name, :last_name, :gender, :age
-  validates :password, length: { in: 8..20 } 
-  validates :age, numericality: { greater_than: 18 }
-  validates_inclusion_of :age, in: 18..99 
   def self.find_for_oauth(auth, signed_in_resource = nil)
 
     # Get the identity and user if they exist
@@ -32,6 +27,8 @@ class User < ActiveRecord::Base
       email_is_verified = auth.info.email && (auth.info.verified || auth.info.verified_email)
       email = auth.info.email if email_is_verified
       user = User.where(:email => email).first if email
+      puts "hello"
+      puts auth.info
 
       # Create the user if it's a new registration
       if user.nil?
@@ -41,8 +38,8 @@ class User < ActiveRecord::Base
           email: email ? email : "#{TEMP_EMAIL_PREFIX}-#{auth.uid}-#{auth.provider}.com",
           password: Devise.friendly_token[0,20]
         )
-        user.skip_confirmation!
-        user.save!
+        user.skip_confirmation! if user.respond_to?(:skip_confirmation)
+        user.save
       end
     end
 

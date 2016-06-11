@@ -3,7 +3,7 @@
 Devise.setup do |config|
   
   config.omniauth :facebook, "126597324428276", "db8284801472402ed4c66c07f15b6221"
-  config.omniauth :twitter, "n4MdcXgSnpuv6oB0djlPYekBr", "n4MdcXgSnpuv6oB0djlPYekBr"
+  config.omniauth :twitter, "n4MdcXgSnpuv6oB0djlPYekBr", "2NwJyePb8itC9oBfUv49Ewww9QexwGC1pU95ySQ590YQu8hSBn"
   
   
   # The secret key used by Devise. Devise uses this key to generate
