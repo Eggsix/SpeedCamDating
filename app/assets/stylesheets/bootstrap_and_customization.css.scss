@@ -1,7 +1,10 @@
 $modal-dialog-left: 0px;
 
 @import 'bootstrap-sprockets';
+@import 'bootstrap-social';
 @import 'bootstrap';
+@import 'font-awesome';
+
 @import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css");
 
 html, body {height: 100%};
@@ -42,4 +45,8 @@ html, body {height: 100%};
 #notice {
     position: fixed;
     z-index: 1;
+}
+
+.navbar-fixed-top {
+    height: 70px; /* Whatever you want. */
 }

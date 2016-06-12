@@ -13,7 +13,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'bootstrap-sass'
 gem 'bootstrap-social-rails'
-gem 'font-awesome-less'
+gem 'font-awesome-rails'
 
 
 #login credential options
@@ -21,6 +21,8 @@ gem 'devise'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
+gem 'omniauth-instagram'
+
 
 group :development, :test do
   gem 'byebug'

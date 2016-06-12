@@ -1,0 +1,72 @@
+<div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="vertical-alignment-helper">
+        <div class="modal-dialog vertical-align-center">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+                    </button>
+                     <h4 class="modal-title" id="myModalLabel">It's free to join!</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <ul></ul>
+                            <%= form_for(resource, as: resource_name, 
+                                            url: registration_path(resource_name), 
+                                            html: { class: "sign_in_user" },
+                                            format: :json,
+                                            remote: true) do |f| %>
+                        
+                                <div class="form-group">
+                                    <%= f.label :name %>
+                                    <%= f.text_field :name, class: "form-control" %>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <%= f.label :email %>
+                                    <%= f.email_field :email, class: "form-control"  %>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <%= f.label :password %>
+                                    <%= f.password_field :password, class: "form-control" %>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <%= f.label :password_confirmation %>
+                                    <%= f.password_field :password_confirmation, class: "form-control" %>
+                                </div>
+                                
+                                <div class="checkbox-inline">
+                                    <%= f.label :gender %>
+                                    <%= f.select :gender, options_for_select([["Male", "Male"], ["Female", "Female"]]), {:prompt => 'Select Gender'}, {required: 'true', class: 'form-control'} %>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <%= f.label :age %>
+                                    <%= f.text_field :age, class: "form-control" %> 
+                                </div>
+                                
+                                <div class="form-group">
+                                    <%= f.submit "Get started now", class: "btn btn-primary"%>
+                                </div>
+                                
+                            <% end %>
+                        </div>
+                        <div class="col-md-6">
+                            <%= link_to user_omniauth_authorize_path(:facebook), class: "btn btn-block btn-social btn-facebook" do %>
+                               <span class="fa fa-facebook"></span> Sign up with Facebook
+                            <% end %>
+                            <%= link_to user_omniauth_authorize_path(:twitter), class: "btn btn-block btn-social btn-twitter" do %>
+                               <span class="fa fa-twitter"></span> Sign up with Twitter
+                            <% end %>
+                            <%= link_to user_omniauth_authorize_path(:instagram), class: "btn btn-block btn-social btn-instagram" do %>
+                               <span class="fa fa-instagram"></span> Sign up with Instagram
+                            <% end %>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
