@@ -1,9 +1,14 @@
-
-<h1>Welcome to Speed Dating Online!</h1>
-<% if !current_user %>
-    <button class="btn btn-primary" data-toggle="modal" data-target="#signinModal">Sign in</button>
-    <button class="btn btn-primary" data-toggle="modal" data-target="#signupModal">Sign up</button>
-<% end %>
+<section id="top">
+    <h1>Welcome to Speed Dating Online!</h1>
+    <div id="#auth_buttons">
+    <% if !current_user %>
+        <button class="btn btn-primary" data-toggle="modal" data-target="#signinModal">Sign in</button>
+        <button class="btn btn-primary" data-toggle="modal" data-target="#signupModal">Sign up</button>        
+    <% end %>
+    </div>
+</section>
+<section id="about"></section>
+<seciton id="info"></seciton>
 <!-- Modal -->
 <%= render "home/signin_modal" %>
 <%= render "home/signup_modal" %>

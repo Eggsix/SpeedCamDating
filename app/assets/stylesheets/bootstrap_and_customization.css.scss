@@ -9,8 +9,20 @@ $modal-dialog-left: 0px;
 
 html, body {height: 100%};
 
+* {
+  border-radius: 0 !important;
+}
 .container {
     height: 100%;
+}
+
+.navbar {
+    position: fixed;
+    background: rgba(255, 255, 255, 0.7);
+    top: 0;
+    left: 0;
+    right:0;
+    padding: 16px;
 }
 
 @media screen and (min-width: 768px) {
@@ -47,6 +59,14 @@ html, body {height: 100%};
     z-index: 1;
 }
 
-.navbar-fixed-top {
-    height: 70px; /* Whatever you want. */
+
+section {
+    height: 500px;
+    width: 100%;
+}
+#top {
+    background-image: image-url("holding_hands.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }

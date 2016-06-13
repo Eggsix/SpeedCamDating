@@ -39,7 +39,6 @@ class RegistrationsController < Devise::RegistrationsController
   # RegistrationsController.
   def sign_up(resource_name, resource)
     devise_parameter_sanitizer.sanitize(:sign_up)
-    sign_in(resource_name, resource)
   end
   
   private
